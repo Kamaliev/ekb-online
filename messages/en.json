@@ -1,0 +1,240 @@
+{
+  "Meta": {
+    "title": "EKB Online — effortless smart home",
+    "description": "Video surveillance, climate, security and scenario control in one cabinet. Smart-home service for apartments and houses in Yekaterinburg."
+  },
+  "Header": {
+    "logo": "EKB Online",
+    "nav": {
+      "home": "Home",
+      "cameras": "Cameras",
+      "dashboard": "Devices",
+      "tariffs": "Pricing"
+    },
+    "login": "Sign in",
+    "signup": "Sign up"
+  },
+  "Hero": {
+    "tag": "Beta in Yekaterinburg",
+    "title": "Your home, always online",
+    "subtitle": "Cameras, sensors and devices in one secure dashboard. Control everything from your phone — even during a city blackout.",
+    "cta_primary": "Open dashboard",
+    "cta_secondary": "Pick a plan",
+    "stats_users": "active homes",
+    "stats_cameras": "cameras online",
+    "stats_uptime": "quarterly uptime"
+  },
+  "Features": {
+    "title": "What EKB Online does",
+    "subtitle": "Full smart-home stack — no third-party subscriptions",
+    "items": {
+      "cameras": {
+        "title": "HD video surveillance",
+        "desc": "Up to 32 cameras per home. 30-day cloud archive, AES-256 encryption."
+      },
+      "voice": {
+        "title": "Voice control",
+        "desc": "\"Alice, turn off the bedroom light\" — works offline on the local hub."
+      },
+      "scenarios": {
+        "title": "Scenarios & automations",
+        "desc": "By schedule, geolocation or sensors. No code — drag-and-drop."
+      },
+      "alarm": {
+        "title": "Panic button",
+        "desc": "Call security and alert neighbours with one tap. Integrated with Rosgvardia."
+      },
+      "energy": {
+        "title": "Energy monitoring",
+        "desc": "See every socket's draw. We auto-shut phantom loads."
+      },
+      "mobile": {
+        "title": "Mobile app",
+        "desc": "iOS & Android. Push, home-screen widgets, Apple Watch support."
+      }
+    }
+  },
+  "Cameras": {
+    "title": "Live feed from every camera",
+    "subtitle": "Demo grid — sign in to access recordings and controls",
+    "live_badge": "LIVE",
+    "items": {
+      "entrance": "Entrance",
+      "parking": "Parking",
+      "playground": "Playground",
+      "lobby": "Lobby",
+      "corridor": "Corridor",
+      "kitchen": "Kitchen",
+      "garage": "Garage",
+      "garden": "Garden"
+    },
+    "open_record": "Open archive",
+    "fps": "FPS"
+  },
+  "Devices": {
+    "title": "Supported devices",
+    "subtitle": "Compatible with 1500+ models. Connect over Wi-Fi, Zigbee or Matter.",
+    "items": {
+      "light": {
+        "title": "Smart lighting",
+        "desc": "RGB bulbs, strips, dimmers — Yeelight, Aqara, IKEA Tradfri"
+      },
+      "thermo": {
+        "title": "Climate control",
+        "desc": "Thermostats, ACs, humidifiers — Daikin, Mitsubishi"
+      },
+      "lock": {
+        "title": "Smart locks",
+        "desc": "Aqara N100, Xiaomi Smart Lock — fingerprint or code"
+      },
+      "sensor": {
+        "title": "Safety sensors",
+        "desc": "Smoke, leak, motion, door — instant push notifications"
+      }
+    },
+    "control": "Control device"
+  },
+  "Pricing": {
+    "title": "Transparent pricing",
+    "subtitle": "No hidden fees. Cancel any time.",
+    "month": "/mo",
+    "items": {
+      "basic": {
+        "title": "Basic",
+        "price": "$6",
+        "feats": [
+          "Up to 4 cameras",
+          "7-day archive",
+          "Push notifications",
+          "Email support"
+        ],
+        "cta": "Subscribe"
+      },
+      "smart": {
+        "title": "Smart",
+        "price": "$12",
+        "feats": [
+          "Up to 16 cameras",
+          "30-day archive",
+          "Scenarios & automations",
+          "Voice control",
+          "24/7 support"
+        ],
+        "cta": "Subscribe",
+        "badge": "Popular"
+      },
+      "pro": {
+        "title": "Pro",
+        "price": "$30",
+        "feats": [
+          "Up to 32 cameras",
+          "90-day archive",
+          "Panic button with response",
+          "Energy monitoring",
+          "Personal manager"
+        ],
+        "cta": "Subscribe"
+      }
+    }
+  },
+  "FAQ": {
+    "title": "Frequently asked",
+    "items": {
+      "q1": {
+        "q": "How fast is installation?",
+        "a": "Our crew arrives within 24 hours. Installation takes 2-4 hours depending on device count."
+      },
+      "q2": {
+        "q": "Can I use my own cameras?",
+        "a": "Yes — any ONVIF or RTSP camera works. We verify compatibility for free."
+      },
+      "q3": {
+        "q": "Where are recordings stored?",
+        "a": "In a Tier III data centre in Yekaterinburg. All data is encrypted, only you have access."
+      },
+      "q4": {
+        "q": "What if the internet goes down?",
+        "a": "The local hub keeps running: records to SD, runs scenarios, sends SMS over GSM."
+      },
+      "q5": {
+        "q": "Will it work in a new-build flat?",
+        "a": "Yes. If there's no smart-device wiring, our engineers design a wireless setup."
+      },
+      "q6": {
+        "q": "Is there a free trial?",
+        "a": "First 14 days are free — no card required. Cancel any time, no questions asked."
+      }
+    }
+  },
+  "Footer": {
+    "rights": "All rights reserved",
+    "address": "Yekaterinburg, Malysheva st. 51",
+    "phone": "+7 (343) 000-00-00",
+    "email": "hello@example.com",
+    "links": {
+      "company": "Company",
+      "about": "About",
+      "careers": "Careers",
+      "blog": "Blog",
+      "press": "Press",
+      "product": "Product",
+      "features": "Features",
+      "integrations": "Integrations",
+      "security": "Security",
+      "changelog": "Changelog",
+      "support": "Support",
+      "help": "Help",
+      "contact": "Contact",
+      "status": "Status",
+      "docs": "Docs"
+    }
+  },
+  "AuthModal": {
+    "login_title": "Sign in",
+    "signup_title": "Create account",
+    "switch_to_signup": "No account? Create one",
+    "switch_to_login": "Have an account? Sign in",
+    "email": "Email",
+    "email_placeholder": "you@example.com",
+    "password": "Password",
+    "password_placeholder": "••••••••",
+    "name": "Name",
+    "name_placeholder": "John Doe",
+    "submit_login": "Sign in",
+    "submit_signup": "Create account",
+    "loading": "Checking...",
+    "forgot": "Forgot password?",
+    "error": "Wrong login or password",
+    "agreement": "By clicking the button you agree to the terms of service"
+  },
+  "Pages": {
+    "cameras": {
+      "title": "My cameras",
+      "subtitle": "8 devices online • Archive active"
+    },
+    "dashboard": {
+      "title": "Devices",
+      "subtitle": "All your devices in one place",
+      "rooms": {
+        "living": "Living room",
+        "bedroom": "Bedroom",
+        "kitchen": "Kitchen",
+        "bathroom": "Bathroom",
+        "garage": "Garage",
+        "garden": "Garden"
+      },
+      "states": {
+        "on": "On",
+        "off": "Off",
+        "armed": "Armed"
+      }
+    },
+    "tariffs": {
+      "title": "Pick a plan",
+      "subtitle": "Switch any time"
+    }
+  },
+  "Common": {
+    "language": "Language"
+  }
+}

@@ -1,0 +1,75 @@
+services:
+  traefik:
+    image: traefik:v3.1
+    container_name: traefik
+    restart: unless-stopped
+    command:
+      - --api.dashboard=false
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --providers.docker.network=web
+      - --entrypoints.web.address=:80
+      - --entrypoints.web.http.redirections.entrypoint.to=websecure
+      - --entrypoints.web.http.redirections.entrypoint.scheme=https
+      - --entrypoints.web.http.redirections.entrypoint.permanent=true
+      - --entrypoints.websecure.address=:443
+      - --certificatesresolvers.le.acme.email=${ACME_EMAIL}
+      - --certificatesresolvers.le.acme.storage=/letsencrypt/acme.json
+      - --certificatesresolvers.le.acme.httpchallenge=true
+      - --certificatesresolvers.le.acme.httpchallenge.entrypoint=web
+      - --log.level=INFO
+      - --accesslog=true
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - traefik-letsencrypt:/letsencrypt
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - web
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:80/ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ekb-app
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    networks:
+      - web
+    expose:
+      - "3000"
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=web
+      # router
+      - traefik.http.routers.app.rule=Host(`${DOMAIN}`)
+      - traefik.http.routers.app.entrypoints=websecure
+      - traefik.http.routers.app.tls=true
+      - traefik.http.routers.app.tls.certresolver=le
+      # service
+      - traefik.http.services.app.loadbalancer.server.port=3000
+      # security headers
+      - traefik.http.middlewares.sec.headers.stsSeconds=31536000
+      - traefik.http.middlewares.sec.headers.stsIncludeSubdomains=true
+      - traefik.http.middlewares.sec.headers.stsPreload=true
+      - traefik.http.middlewares.sec.headers.contentTypeNosniff=true
+      - traefik.http.middlewares.sec.headers.browserXssFilter=true
+      - traefik.http.middlewares.sec.headers.frameDeny=true
+      - traefik.http.middlewares.sec.headers.referrerPolicy=strict-origin-when-cross-origin
+      - traefik.http.middlewares.sec.headers.permissionsPolicy=camera=(), microphone=(), geolocation=()
+      - traefik.http.routers.app.middlewares=sec@docker
+
+volumes:
+  traefik-letsencrypt:
+
+networks:
+  web:
+    name: web
+    driver: bridge
